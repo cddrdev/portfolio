@@ -1,0 +1,40 @@
+.site-footer {
+  padding-block: 1.6rem;
+  color: #f1f5ee;
+  background: #1d3528;
+}
+
+.site-footer__inner,
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+}
+
+.site-footer__inner {
+  justify-content: space-between;
+}
+
+.site-footer__inner p {
+  font-weight: 650;
+}
+
+.site-footer__links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer a {
+  color: #d5e5d4;
+  font-size: 0.9375rem;
+}
+
+.site-footer a:focus-visible {
+  outline-color: #d5e5d4;
+}
+
+.site-footer__back span {
+  margin-left: 0.3rem;
+}

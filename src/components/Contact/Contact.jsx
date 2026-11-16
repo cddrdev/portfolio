@@ -1,0 +1,23 @@
+import Section from '../Section/Section.jsx';
+import './Contact.css';
+
+export default function Contact({ contact }) {
+  return (
+    <Section id="contacto" title="Contacto">
+      <p className="contact__intro">{contact.intro}</p>
+      <ul className="contact-list" role="list">
+        {contact.items.map(({ id, label, value, href }) => (
+          <li key={id}>
+            <a className="contact-card" href={href}>
+              <span className="contact-card__label">{label}</span>
+              <span className="contact-card__value">{value}</span>
+              <span className="contact-card__arrow" aria-hidden="true">
+                ↗
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </Section>
+  );
+}

@@ -1,0 +1,277 @@
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@keyframes drift {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+.site-header {
+  background: color-mix(in srgb, var(--background) 88%, transparent);
+  backdrop-filter: blur(10px);
+  transition: box-shadow 0.3s ease;
+}
+
+.site-header.is-scrolled {
+  box-shadow: 0 10px 24px -18px rgb(23 39 30 / 0.45);
+}
+
+.site-header__monogram {
+  transition: transform 0.25s ease;
+}
+
+.site-header__brand:hover .site-header__monogram {
+  transform: rotate(-6deg);
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: radial-gradient(circle, #bccab9 1.1px, transparent 1.6px);
+  background-size: 24px 24px;
+  content: '';
+  mask-image: radial-gradient(ellipse 60% 85% at 85% 35%, #000, transparent 72%);
+}
+
+.hero::after {
+  position: absolute;
+  z-index: -1;
+  top: -9rem;
+  right: -8rem;
+  width: 34rem;
+  max-width: 90vw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-light), transparent 68%);
+  content: '';
+}
+
+.hero__inner > div > * {
+  animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+
+.hero__inner > div > :nth-child(2) { animation-delay: 0.08s; }
+.hero__inner > div > :nth-child(3) { animation-delay: 0.16s; }
+.hero__inner > div > :nth-child(4) { animation-delay: 0.24s; }
+
+.hero__portrait {
+  position: relative;
+  animation: drift 1s 0.2s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+
+.hero__portrait::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border: 1px solid var(--accent);
+  border-radius: 1.5rem;
+  content: '';
+  opacity: 0.4;
+  transform: translate(0.8rem, 0.8rem);
+  transition: transform 0.4s ease;
+}
+
+.hero__portrait:hover::before {
+  transform: translate(0.45rem, 0.45rem);
+}
+
+.hero__portrait img {
+  transition: filter 0.5s ease;
+}
+
+.hero__portrait:hover img {
+  filter: grayscale(0);
+}
+
+.hero__primary {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero__primary:hover {
+  transform: translateY(-1px);
+}
+
+.hero__actions a span {
+  transition: transform 0.2s ease;
+}
+
+.hero__actions a:hover span {
+  transform: translateY(3px);
+}
+
+.section__title::after {
+  display: block;
+  width: 2.75rem;
+  height: 3px;
+  margin-top: 0.7rem;
+  border-radius: 2px;
+  background: var(--accent);
+  content: '';
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.7s 0.15s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.section.is-visible .section__title::after {
+  transform: none;
+}
+
+.project-card {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  border-color: #b4c6b1;
+  box-shadow: 0 16px 32px -22px rgb(27 64 45 / 0.5);
+  transform: translateY(-3px);
+}
+
+.project-card__link span {
+  transition: transform 0.2s ease;
+}
+
+.project-card__link:hover span {
+  transform: translate(2px, -2px);
+}
+
+.tag-list__item {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.tag-list__item:hover {
+  border-color: #b4c6b1;
+  background: #e2ecde;
+}
+
+.experience-list {
+  overflow: hidden;
+}
+
+.experience-list__item {
+  transition: background-color 0.25s ease;
+}
+
+.experience-list__item:hover {
+  background: #fbfcfa;
+}
+
+.experience-list__period::before {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.6rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-light);
+  content: '';
+  vertical-align: 0.05em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .section__title::after {
+    transform: none;
+  }
+}
+
+.site-footer__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.site-footer__back span {
+  display: inline-grid;
+  width: 1.9rem;
+  aspect-ratio: 1;
+  place-items: center;
+  margin-left: 0;
+  border: 1px solid rgb(213 229 212 / 0.45);
+  border-radius: 50%;
+  transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1), background-color 0.2s ease,
+    color 0.2s ease, border-color 0.2s ease;
+}
+
+.site-footer__back:hover span,
+.site-footer__back:focus-visible span {
+  border-color: #d5e5d4;
+  color: #1d3528;
+  background: #d5e5d4;
+  transform: translateY(-4px);
+}
+
+.site-footer__back:active span {
+  transform: translateY(-1px) scale(0.94);
+}
+
+.hero__actions .hero__external:hover span {
+  transform: translate(2px, -2px);
+}
+
+.hero__github-icon {
+  flex: none;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero__external:hover .hero__github-icon,
+.hero__external:focus-visible .hero__github-icon {
+  transform: rotate(-14deg) scale(1.12);
+}
+
+.hero__external:active {
+  transform: translateY(1px);
+}
+
+.site-footer__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.site-footer__link:hover,
+.site-footer__link:focus-visible {
+  color: #fff;
+}
+
+.site-footer__link span {
+  transition: transform 0.2s ease;
+}
+
+.site-footer__link:hover span {
+  transform: translate(2px, -2px);
+}
+
+.site-footer__icon {
+  flex: none;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.site-footer__link:hover .site-footer__icon,
+.site-footer__link:focus-visible .site-footer__icon {
+  transform: rotate(-14deg) scale(1.12);
+}
+
+.site-footer__link:active {
+  transform: translateY(1px);
+}

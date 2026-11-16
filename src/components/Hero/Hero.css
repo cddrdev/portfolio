@@ -1,0 +1,121 @@
+.hero {
+  padding-block: clamp(3.5rem, 7vw, 6.5rem) clamp(3.5rem, 6.5vw, 6rem);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(13.5rem, 31%);
+  align-items: center;
+  gap: clamp(2.25rem, 6vw, 5.75rem);
+}
+
+.hero__role {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: clamp(0.72rem, 1.35vw, 0.875rem);
+  font-weight: 500;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.hero__role::before {
+  width: 1.15rem;
+  height: 2px;
+  flex: none;
+  background: currentColor;
+  content: '';
+}
+
+.hero h1 {
+  font-size: clamp(3.1rem, 6.45vw, 6rem);
+  font-weight: 680;
+  letter-spacing: -0.067em;
+  line-height: 0.99;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--accent);
+}
+
+.hero__summary {
+  max-width: 52ch;
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: clamp(1.03rem, 1.45vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1.45rem;
+  margin-top: 1.75rem;
+}
+
+.hero__actions a {
+  display: inline-flex;
+  min-height: 2.875rem;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.hero__primary {
+  padding-inline: 1.05rem;
+  border-radius: 0.6rem;
+  color: var(--surface);
+  background: var(--accent);
+}
+
+.hero__primary:hover {
+  background: var(--accent-dark);
+}
+
+.hero__secondary {
+  color: var(--accent-dark);
+}
+
+.hero__secondary:hover {
+  text-decoration: underline;
+}
+
+.hero__portrait {
+  width: 100%;
+  max-width: 22rem;
+  margin: 0;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  background: var(--accent-light);
+}
+
+.hero__portrait img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1.08;
+  border-radius: 1rem;
+  filter: grayscale(1);
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+@media (max-width: 46rem) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 10.5vw, 4.75rem);
+  }
+
+  .hero__portrait {
+    max-width: 17.5rem;
+  }
+}

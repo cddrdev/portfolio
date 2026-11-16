@@ -1,0 +1,60 @@
+.experience-list {
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--card-radius);
+  background: var(--surface);
+  list-style: none;
+}
+
+.experience-list__item {
+  display: grid;
+  grid-template-columns: minmax(10rem, 22%) minmax(0, 1fr);
+  gap: 0.65rem 1.25rem;
+  padding: clamp(1.25rem, 3vw, 1.9rem);
+}
+
+.experience-list__item + .experience-list__item {
+  border-top: 1px solid var(--line);
+}
+
+.experience-list__period {
+  margin-top: 0.25rem;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.experience-list h3 {
+  font-size: 1.3rem;
+  font-weight: 660;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.experience-list__organization {
+  margin-top: 0.15rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.experience-list__responsibilities {
+  margin: 0.75rem 0 0;
+  padding-left: 1.15rem;
+  color: var(--muted);
+}
+
+.experience-list__responsibilities li + li {
+  margin-top: 0.25rem;
+}
+
+.experience-list__responsibilities li::marker {
+  color: var(--accent);
+}
+
+@media (max-width: 40rem) {
+  .experience-list__item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

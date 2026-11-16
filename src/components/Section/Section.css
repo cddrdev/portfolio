@@ -1,0 +1,12 @@
+.section {
+  padding-block: clamp(2.75rem, 5.2vw, 4.75rem);
+  border-top: 1px solid var(--line);
+}
+
+.section__title {
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.8rem);
+  font-size: clamp(1.9rem, 4.2vw, 3rem);
+  font-weight: 680;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+}

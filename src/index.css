@@ -1,0 +1,72 @@
+:root {
+  font-family: 'Instrument Sans Variable', system-ui, sans-serif;
+  font-synthesis: none;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #17271e;
+  background: #f8f8f3;
+  color-scheme: light;
+  --background: #f8f8f3;
+  --surface: #fff;
+  --ink: #17271e;
+  --muted: #4e5c53;
+  --line: #d8e0d5;
+  --accent: #28583f;
+  --accent-dark: #1b402d;
+  --accent-light: #e8f0e5;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --page-gutter: clamp(1.25rem, 5vw, 4rem);
+  --content-width: 70rem;
+  --card-radius: 1.125rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.22em;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+::selection {
+  color: var(--ink);
+  background: #ccdfca;
+}
+
+@media (max-width: 44rem) {
+  html {
+    scroll-padding-top: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
