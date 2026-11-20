@@ -10,7 +10,7 @@
   left: 1rem;
   padding: 0.65rem 1rem;
   border-radius: 0.4rem;
-  color: var(--surface);
+  color: var(--on-accent);
   background: var(--accent-dark);
   transform: translateY(calc(-100% - 2rem));
 }

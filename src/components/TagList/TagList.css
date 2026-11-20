@@ -9,10 +9,10 @@
 
 .tag-list__item {
   padding: 0.25rem 0.58rem;
-  border: 1px solid #dce6d9;
+  border: 1px solid var(--tag-line);
   border-radius: 0.45rem;
-  color: #2c4737;
-  background: #eff4ed;
+  color: var(--tag-ink);
+  background: var(--tag-background);
   font-size: 0.875rem;
   font-weight: 550;
   line-height: 1.35;

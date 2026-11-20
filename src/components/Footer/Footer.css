@@ -1,7 +1,8 @@
 .site-footer {
   padding-block: 1.6rem;
   color: #f1f5ee;
-  background: #1d3528;
+  background: var(--footer-background);
+  transition: background-color 0.3s ease;
 }
 
 .site-footer__inner,

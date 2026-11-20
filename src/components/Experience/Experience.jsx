@@ -1,9 +1,9 @@
 import Section from '../Section/Section.jsx';
 import './Experience.css';
 
-export default function Experience({ experience }) {
+export default function Experience({ experience, title }) {
   return (
-    <Section id="experiencia" title="Experiencia profesional">
+    <Section id="experiencia" title={title}>
       <ul className="experience-list" role="list">
         {experience.map(({ id, role, organization, period, responsibilities }) => (
           <li className="experience-list__item" key={id}>

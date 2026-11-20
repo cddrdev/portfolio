@@ -70,7 +70,7 @@
 .hero__primary {
   padding-inline: 1.05rem;
   border-radius: 0.6rem;
-  color: var(--surface);
+  color: var(--on-accent);
   background: var(--accent);
 }
 
@@ -94,6 +94,7 @@
   border: 1px solid var(--line);
   border-radius: 1.5rem;
   background: var(--accent-light);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .hero__portrait img {

@@ -1,9 +1,9 @@
 import Section from '../Section/Section.jsx';
 import './Education.css';
 
-export default function Education({ education, languages }) {
+export default function Education({ education, languages, title, languagesTitle }) {
   return (
-    <Section id="formacion" title="Formación">
+    <Section id="formacion" title={title}>
       <div className="education-grid">
         <ul className="education-list" role="list">
           {education.map(({ id, title, institution, period }) => (
@@ -17,7 +17,7 @@ export default function Education({ education, languages }) {
           ))}
         </ul>
         <aside className="languages" aria-labelledby="idiomas-titulo">
-          <h3 id="idiomas-titulo">Idiomas</h3>
+          <h3 id="idiomas-titulo">{languagesTitle}</h3>
           <dl className="languages__list">
             {languages.map(({ name, level }) => (
               <div key={name}>

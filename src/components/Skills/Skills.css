@@ -1,5 +1,5 @@
 #tecnologias {
-  background: #eff3ec;
+  background: var(--section-surface);
 }
 
 .skills-grid {
@@ -13,6 +13,7 @@
   border: 1px solid var(--line);
   border-radius: var(--card-radius);
   background: var(--surface);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .skill-card h3 {

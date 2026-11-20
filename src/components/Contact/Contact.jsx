@@ -1,9 +1,9 @@
 import Section from '../Section/Section.jsx';
 import './Contact.css';
 
-export default function Contact({ contact }) {
+export default function Contact({ contact, title }) {
   return (
-    <Section id="contacto" title="Contacto">
+    <Section id="contacto" title={title}>
       <p className="contact__intro">{contact.intro}</p>
       <ul className="contact-list" role="list">
         {contact.items.map(({ id, label, value, href }) => (

@@ -15,11 +15,11 @@
 .site-header {
   background: color-mix(in srgb, var(--background) 88%, transparent);
   backdrop-filter: blur(10px);
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .site-header.is-scrolled {
-  box-shadow: 0 10px 24px -18px rgb(23 39 30 / 0.45);
+  box-shadow: 0 10px 24px -18px var(--header-shadow);
 }
 
 .site-header__monogram {
@@ -40,7 +40,7 @@
   position: absolute;
   z-index: -1;
   inset: 0;
-  background-image: radial-gradient(circle, #bccab9 1.1px, transparent 1.6px);
+  background-image: radial-gradient(circle, var(--pattern) 1.1px, transparent 1.6px);
   background-size: 24px 24px;
   content: '';
   mask-image: radial-gradient(ellipse 60% 85% at 85% 35%, #000, transparent 72%);
@@ -130,12 +130,13 @@
 }
 
 .project-card {
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease,
+    background-color 0.3s ease;
 }
 
 .project-card:hover {
-  border-color: #b4c6b1;
-  box-shadow: 0 16px 32px -22px rgb(27 64 45 / 0.5);
+  border-color: var(--hover-line);
+  box-shadow: 0 16px 32px -22px var(--card-shadow);
   transform: translateY(-3px);
 }
 
@@ -148,12 +149,12 @@
 }
 
 .tag-list__item {
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .tag-list__item:hover {
-  border-color: #b4c6b1;
-  background: #e2ecde;
+  border-color: var(--hover-line);
+  background: var(--tag-hover);
 }
 
 .experience-list {
@@ -165,7 +166,7 @@
 }
 
 .experience-list__item:hover {
-  background: #fbfcfa;
+  background: var(--row-hover);
 }
 
 .experience-list__period::before {

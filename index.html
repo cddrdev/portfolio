@@ -8,6 +8,23 @@
       content="Portfolio de Carlos de Diego Rodríguez, desarrollador full stack junior con experiencia en desarrollo web e integración de IA."
     />
     <meta name="theme-color" content="#f8f8f3" />
+    <script>
+      (() => {
+        let theme;
+        let language;
+        try {
+          theme = localStorage.getItem('portfolio-theme');
+          language = localStorage.getItem('portfolio-language');
+        } catch {
+        }
+        const dark = theme === 'dark' || (
+          theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches
+        );
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.documentElement.lang = language === 'en' ? 'en' : 'es';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#101b15' : '#f8f8f3';
+      })();
+    </script>
     <meta name="author" content="Carlos de Diego Rodríguez" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />

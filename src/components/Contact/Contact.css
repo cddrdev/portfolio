@@ -26,12 +26,13 @@
   border-radius: var(--card-radius);
   background: var(--surface);
   text-decoration: none;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease,
+    background-color 0.3s ease;
 }
 
 .contact-card:hover {
-  border-color: #b4c6b1;
-  box-shadow: 0 16px 32px -22px rgb(27 64 45 / 0.5);
+  border-color: var(--hover-line);
+  box-shadow: 0 16px 32px -22px var(--card-shadow);
   transform: translateY(-3px);
 }
 

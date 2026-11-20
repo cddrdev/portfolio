@@ -12,6 +12,7 @@
   border: 1px solid var(--line);
   border-radius: var(--card-radius);
   background: var(--surface);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .education-list {
