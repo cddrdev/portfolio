@@ -1,4 +1,4 @@
-import portrait from '../assets/carlos-de-diego.png';
+import portrait from '../assets/carlos-de-diego.webp';
 
 const portfolio = {
   metadata: {
@@ -13,6 +13,17 @@ const portfolio = {
   },
   ui: {
     skipLink: 'Saltar al contenido',
+    analytics: {
+      title: 'Estadísticas del portfolio',
+      description: '¿Me permites usar Google Analytics para conocer las visitas y los clics en proyectos y contacto? Es opcional y puedes cambiar tu elección en el pie de página.',
+      accept: 'Aceptar',
+      reject: 'Rechazar',
+      close: 'Cerrar',
+      details: 'Información de privacidad',
+      settings: 'Preferencias de privacidad',
+      privacy: 'Carlos de Diego Rodríguez utiliza Google Analytics para medir el uso de este portfolio. Si aceptas, Google recibe datos de navegación, dispositivo y procedencia del tráfico, y guarda cookies de analítica con una duración configurada de hasta 180 días. No se envían nombres ni direcciones de correo y las funciones publicitarias están desactivadas. La elección se recuerda en este navegador durante 180 días. Puedes retirar el permiso aquí en cualquier momento; esto detiene nuevas mediciones y elimina las cookies de analítica accesibles desde esta web, sin borrar los datos ya enviados a Google.',
+      googlePrivacy: 'Cómo utiliza Google estos datos',
+    },
     header: {
       navigation: 'Navegación principal',
       openMenu: 'Abrir menú',

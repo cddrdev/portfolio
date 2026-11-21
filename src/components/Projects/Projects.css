@@ -30,8 +30,10 @@
 }
 
 .project-card__description {
+  width: 100%;
   max-width: 48ch;
   color: var(--muted);
+  overflow-wrap: anywhere;
 }
 
 .project-card .tag-list {

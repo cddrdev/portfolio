@@ -13,7 +13,7 @@ export default function Projects({ projects, title, technologiesLabel }) {
             <p className="project-card__description">{description}</p>
             <TagList tags={technologies} label={technologiesLabel} />
             {link && (
-              <a className="project-card__link" href={link.href}>
+              <a className="project-card__link" href={link.href} data-analytics-event="project_click" data-analytics-id={id}>
                 {link.label} <span aria-hidden="true">↗</span>
               </a>
             )}

@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { analyticsConfigured } from './config.js';
 import Header from './components/Header/Header.jsx';
 import Hero from './components/Hero/Hero.jsx';
 import Projects from './components/Projects/Projects.jsx';
@@ -13,9 +14,25 @@ import './App.css';
 import './motion.css';
 
 export default function App() {
+  const [analytics, setAnalytics] = useState(null);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
   const { language, theme, toggleLanguage, toggleTheme } = usePreferences();
   const { profile, navigation, projects, experience, skills, education, languages, contact, links, ui, metadata } =
     portfolios[language];
+
+  useEffect(() => {
+    if (!analyticsConfigured) return undefined;
+    let active = true;
+    Promise.all([
+      import('./components/AnalyticsConsent/AnalyticsConsent.jsx'),
+      import('./lib/analytics.js'),
+    ]).then(([{ default: Consent }, { trackPortfolioClick }]) => {
+      if (active) setAnalytics({ Consent, trackPortfolioClick });
+    }).catch(() => {});
+    return () => { active = false; };
+  }, []);
+
+  const Consent = analytics?.Consent;
 
   useEffect(() => {
     document.title = metadata.title;
@@ -33,7 +50,10 @@ export default function App() {
   }, [metadata]);
 
   return (
-    <div className="portfolio" id="inicio">
+    <div className="portfolio" id="inicio" onClick={(event) => {
+      const link = event.target.closest('a[data-analytics-event]');
+      if (link) analytics?.trackPortfolioClick(link.dataset.analyticsEvent, link.dataset.analyticsId);
+    }}>
       <a className="skip-link" href="#contenido">
         {ui.skipLink}
       </a>
@@ -63,7 +83,14 @@ export default function App() {
         />
         <Contact contact={contact} title={ui.sections.contact} />
       </main>
-      <Footer name={profile.name} links={links} labels={ui.footer} />
+      <Footer
+        name={profile.name}
+        links={links}
+        labels={ui.footer}
+        privacyLabel={analytics ? ui.analytics.settings : null}
+        onOpenPrivacy={() => setPrivacyOpen(true)}
+      />
+      {Consent && <Consent labels={ui.analytics} open={privacyOpen} onClose={() => setPrivacyOpen(false)} />}
     </div>
   );
 }

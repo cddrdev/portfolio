@@ -1,7 +1,7 @@
 import GitHubIcon from '../Gh/GitHubIcon.jsx';
 import './Footer.css';
 
-export default function Footer({ name, links, labels }) {
+export default function Footer({ name, links, labels, privacyLabel, onOpenPrivacy }) {
   return (
     <footer className="site-footer">
       <div className="container site-footer__inner">
@@ -19,6 +19,11 @@ export default function Footer({ name, links, labels }) {
               ))}
             </ul>
           </nav>
+        )}
+        {privacyLabel && (
+          <button id="analytics-settings" className="analytics-settings" type="button" onClick={onOpenPrivacy}>
+            {privacyLabel}
+          </button>
         )}
         <a className="site-footer__back" href="#inicio">
           {labels.backToTop} <span aria-hidden="true">↑</span>

@@ -24,7 +24,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run build && npm run preview -- --host 127.0.0.1 --port 4175 --strictPort',
+    env: { VITE_GA_MEASUREMENT_ID: 'G-TEST123456' },
+    command: 'npm run build -- --outDir .playwright-dist && npm run preview -- --outDir .playwright-dist --host 127.0.0.1 --port 4175 --strictPort',
     url: 'http://127.0.0.1:4175',
     reuseExistingServer: false,
     timeout: 60_000,

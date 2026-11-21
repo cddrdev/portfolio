@@ -49,12 +49,12 @@ export default function Header({ profile, navigation, labels, language, theme, o
         <a
           className="site-header__brand"
           href="#inicio"
-          aria-label={`${profile.name.firstLine} ${profile.name.secondLine}`}
+          aria-label={`${profile.initials} ${profile.name.firstLine} ${profile.name.secondLine}`}
           onClick={closeMenu}
         >
           <span className="site-header__monogram" aria-hidden="true">
             {profile.initials}
-          </span>
+          </span>{' '}
           <span className="site-header__name">{profile.name.firstLine}</span>
         </a>
         <nav className="site-header__nav" aria-label={labels.navigation}>
@@ -102,13 +102,13 @@ export default function Header({ profile, navigation, labels, language, theme, o
           <button
             className="site-header__control site-header__language"
             type="button"
-            aria-label={labels.switchLanguage}
+            aria-label={`ES EN: ${labels.switchLanguage}`}
             title={labels.switchLanguage}
             lang={language === 'es' ? 'en' : 'es'}
             data-language={language}
             onClick={onToggleLanguage}
           >
-            <span className={language === 'es' ? 'is-active' : ''} aria-hidden="true">ES</span>
+            <span className={language === 'es' ? 'is-active' : ''} aria-hidden="true">ES</span>{' '}
             <span className={language === 'en' ? 'is-active' : ''} aria-hidden="true">EN</span>
           </button>
         </div>

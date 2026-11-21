@@ -1,4 +1,4 @@
-import portrait from '../assets/carlos-de-diego.png';
+import portrait from '../assets/carlos-de-diego.webp';
 
 const portfolio = {
   metadata: {
@@ -13,6 +13,17 @@ const portfolio = {
   },
   ui: {
     skipLink: 'Skip to content',
+    analytics: {
+      title: 'Portfolio analytics',
+      description: 'May I use Google Analytics to measure visits and clicks on projects and contact links? This is optional. You can change your choice in the footer.',
+      accept: 'Accept',
+      reject: 'Reject',
+      close: 'Close',
+      details: 'Privacy information',
+      settings: 'Privacy preferences',
+      privacy: 'Carlos de Diego Rodríguez uses Google Analytics to measure how this portfolio is used. If you accept, Google receives browsing, device and traffic source data, and stores analytics cookies configured to last up to 180 days. Names and email addresses are not sent, and advertising features are disabled. Your choice is remembered in this browser for 180 days. You can withdraw permission here at any time; this stops new measurements and removes analytics cookies accessible from this website, without deleting data already sent to Google.',
+      googlePrivacy: 'How Google uses this data',
+    },
     header: {
       navigation: 'Main navigation',
       openMenu: 'Open menu',

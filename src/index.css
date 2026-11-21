@@ -78,6 +78,12 @@ p {
   margin: 0;
 }
 
+h1,
+h2,
+h3 {
+  overflow-wrap: anywhere;
+}
+
 img {
   display: block;
   max-width: 100%;

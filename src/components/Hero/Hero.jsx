@@ -31,8 +31,8 @@ export default function Hero({ profile, github, labels }) {
           <img
             src={profile.portrait}
             alt=""
-            width="320"
-            height="382"
+            width="768"
+            height="1024"
             fetchPriority="high"
           />
         </figure>

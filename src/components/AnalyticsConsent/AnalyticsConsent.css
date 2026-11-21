@@ -1,0 +1,111 @@
+.analytics-consent {
+  position: fixed;
+  z-index: 4;
+  right: var(--page-gutter);
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  left: var(--page-gutter);
+  display: flex;
+  width: min(calc(100% - var(--page-gutter) * 2), var(--content-width));
+  max-height: calc(100dvh - 2rem);
+  align-items: center;
+  gap: 1.25rem;
+  margin-inline: auto;
+  padding: 1.25rem;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+  border: 1px solid var(--line);
+  border-radius: var(--card-radius);
+  color: var(--ink);
+  background: var(--surface);
+  box-shadow: 0 12px 40px -16px var(--card-shadow);
+  animation: rise 0.35s ease backwards;
+}
+
+.analytics-consent__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.analytics-consent h2 {
+  margin-bottom: 0.3rem;
+  font-size: 1.15rem;
+  font-weight: 660;
+  letter-spacing: -0.025em;
+}
+
+.analytics-consent p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.analytics-consent__details,
+.analytics-settings {
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  cursor: pointer;
+}
+
+.analytics-consent__details {
+  min-height: 2.75rem;
+  color: var(--accent-dark);
+}
+
+#analytics-details p {
+  margin-bottom: 0.5rem;
+}
+
+.analytics-consent__actions {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  max-width: 100%;
+}
+
+.analytics-consent__actions button {
+  min-width: min(6rem, 100%);
+  min-height: 2.75rem;
+  padding: 0.6rem clamp(0.5rem, 2vw, 1rem);
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  color: var(--accent-dark);
+  background: var(--accent-light);
+  font: inherit;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.analytics-consent__actions button:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.analytics-settings {
+  min-height: 2.75rem;
+  color: #d5e5d4;
+  font-size: 0.9375rem;
+}
+
+.analytics-settings:focus-visible {
+  outline-color: #d5e5d4;
+}
+
+@media (max-width: 48rem) {
+  .analytics-consent {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .analytics-consent__actions button {
+    flex: 1;
+  }
+}
